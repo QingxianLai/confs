@@ -76,6 +76,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdcommenter'
 filetype plugin indent on     " required!
 
+
 """
 " common
 """
