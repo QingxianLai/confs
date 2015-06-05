@@ -130,6 +130,7 @@ autocmd FileType javascript setlocal smartindent ts=2 sw=2
 autocmd FileType html setlocal sw=2 ts=2
 autocmd FileType jinja setlocal sw=2 ts=2
 autocmd FileType yaml setlocal sw=2 ts=2
+set backspace=2
 
 
 """
