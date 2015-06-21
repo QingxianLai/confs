@@ -76,6 +76,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdcommenter'
 filetype plugin indent on     " required!
 
+" HowTo
+" Navigate to the window you'd like to move
+" Press <leader>ww
+" Navigate to the window you'd like to swap with
+" Press <leader>ww again
+Plugin 'wesQ3/vim-windowswap'
 
 """
 " common
@@ -139,7 +145,7 @@ set backspace=2
 
 if has("gui_running")
     "Solarized
-    set background=light
+    set background=dark
     "let g:solarized_termtrans=1
     "let g:solarized_termcolors=256
     "let g:solarized_contrast="high"
