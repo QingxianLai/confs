@@ -69,11 +69,6 @@ export PATH=$PATH:$M2_HOME/bin
 export EC2_HOME='/usr/local/ec2/ec2-api-tools-1.7.3.0'
 export PATH=$PATH:$EC2_HOME/bin 
 
-#kdb+
-export QHOME=~/q
-export PATH=$PATH:$QHOME/m32
-alias q='rlwrap -c -r q'
-
 
 # environment variable to the system complain about "cc error " when using pip
 export CFLAGS=-Qunused-arguments
@@ -121,6 +116,10 @@ alias du='du -kh'
 
 alias cdd='cd ~/Desktop'
 alias ls='ls -GFh'
+
+# 2015 summer semester:
+alias pqs='cd /Users/LaiQX/Desktop/pqs/assignments/svnroot_pqs_152/trunk'
+
 
 
 # spark command
