@@ -123,6 +123,8 @@ alias cdd='cd ~/Desktop'
 alias ls='ls -GFh'
 
 
+alias leetcode='cd /Users/LaiQX/Java/LeetCodeOJ/AllOther/src'
+
 # spark command
 alias spark-shell='~/spark-1.3.1/bin/spark-shell'
 alias pyspark='~/spark-1.3.1/bin/pyspark'

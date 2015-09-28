@@ -222,7 +222,9 @@ try
 catch
 endtry
 
-
+" switch to next buffer
+nmap <leader>[ :bNext<cr>
+nmap <leader>] :bnext<cr>
 
 
 " turn on the paste [which is the true paste] in intert mode
