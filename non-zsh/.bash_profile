@@ -1,20 +1,3 @@
-export PYTHONPATH="/Library/Python/2.7/site-packages:$PYTHONPATH"
-export PATH="/Library/Python/2.7/site-packages:$PATH"
-# export PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/python:$PATH"
-export PATH="/opt/local/lib/postgresql93/bin/:$PATH"
-
-
-
-# MacPorts Installer addition on 2014-10-08_at_01:03:13: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-export CLASSPATH=$CLASSPATH:~/Java/algorithm_1/algs4.jar:~/Java/algorithm_1/stdlib.jar
-
-
-#########Emacs################################################
-alias emacs='/opt/local/bin/emacs'
-
-
 ##### COLORS #####################################################
 
 # normal colors!
@@ -47,13 +30,8 @@ On_Purple='\e[45m'      # Purple
 On_Cyan='\e[46m'        # Cyan
 On_White='\e[47m'       # White
 
-
 reset="\e[0m"
-
 #########################################################
-
-
-
 
 
 ## GIT ##################################################
@@ -82,25 +60,7 @@ alias mv='mv -i'
 
 alias df='df -kh'
 alias du='du -kh'
-
-alias cdd='cd ~/Desktop'
-alias ls='ls -GFh'
-
-##For the 15 fall semester
-#alias cdm='cd ~/Desktop/Machine_Learning_1003/'
-#alias cdr='cd ~/Desktop/RealTimeBigData/'
-
-
 ##########################################################
-
-
-#   finderShowHidden:   Show hidden files in Finder
-#   finderHideHidden:   Hide hidden files in Finder
-#   -------------------------------------------------------------------
-#alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-#alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
-
-
 
 function title()
 {
@@ -109,14 +69,8 @@ function title()
 }
 
 
-function tabname 
-{
-    printf "\e]1;$1\a"
-}
-
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-# PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-#export PATH
-#export PATH="/usr/bin:$PATH"
+#function tabname 
+#{
+    #printf "\e]1;$1\a"
+#}
+#########################################################
