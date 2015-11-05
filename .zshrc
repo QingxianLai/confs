@@ -69,6 +69,9 @@ export PATH=$PATH:$M2_HOME/bin
 export EC2_HOME='/usr/local/ec2/ec2-api-tools-1.7.3.0'
 export PATH=$PATH:$EC2_HOME/bin 
 
+export PYTHONPATH='${PYTHONPATH}:/usr/local/Cellar/pyqt/4.11.4/lib/python2.7/site-packages'
+export PYTHONPATH='${PYTHONPATH}:/usr/local/Cellar/sip/4.16.9/lib/python2.7/site-packages'
+
 #kdb+
 export QHOME=~/q
 export PATH=$PATH:$QHOME/m32
@@ -148,3 +151,6 @@ export LSCOLORS=gxFxCxDxBxegedabagaced
 # MySQL
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+
+
+. /Users/LaiQX/torch/install/bin/torch-activate

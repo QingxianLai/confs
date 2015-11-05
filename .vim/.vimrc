@@ -72,6 +72,9 @@ let g:SuperTabDefaultCompletionType = 'context'
 " solarized color scheme
 Plugin 'altercation/vim-colors-solarized'
 
+" desert color scheme
+Plugin 'fugalh/desert.vim'
+
 " NERDcommenter
 Plugin 'scrooloose/nerdcommenter'
 filetype plugin indent on     " required!
@@ -143,6 +146,7 @@ set backspace=2
 " colorscheme
 """
 
+set t_Co=256
 if has("gui_running")
     "Solarized
     set background=light
@@ -157,7 +161,6 @@ else
     colorscheme molokai
     set background=dark
     let g:molokai_original = 1
-    set t_Co=256
     let g:Powerline_symbols = 'fancy'
 endif
 
