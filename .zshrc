@@ -108,6 +108,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+
+alias career='cd /Users/LaiQX/Career'
+
+
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -125,8 +129,9 @@ alias du='du -kh'
 alias cdd='cd ~/Desktop'
 alias ls='ls -GFh'
 
+alias code='cd ~/code'
 
-alias leetcode='cd /Users/LaiQX/Java/LeetCodeOJ/AllOther/src'
+alias leetcode='cd /Users/LaiQX/code/Java/LeetCodeOJ/AllOther/src'
 
 # spark command
 alias spark-shell='~/spark-1.3.1/bin/spark-shell'
@@ -154,3 +159,5 @@ alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 
 
 . /Users/LaiQX/torch/install/bin/torch-activate
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

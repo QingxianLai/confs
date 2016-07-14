@@ -23,7 +23,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
 
-"snipmate.vi"m
+"snipmate.vim
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
@@ -35,17 +35,20 @@ Plugin 'ervandew/supertab'
 Plugin 'xuhdev/SingleCompile'
 
 
+
 Plugin 'davidhalter/jedi-vim'
-
-
-Plugin 'Rip-Rip/clang_complete'
-
-
+" << jedi settings
+let g:jedi#show_call_signatures = "2"
+autocmd FileType python setlocal completeopt-=preview
+" >>
+"
+"
+"Plugin 'Rip-Rip/clang_complete'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/google.vim'
 Plugin 'drmikehenry/vim-headerguard'
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-scripts/Python-Syntax-Folding'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
@@ -53,7 +56,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'pangloss/vim-javascript'
 
 " For octave and Matlab highlighting
-"Plugin 'nvie/vim-flake8'
+Plugin 'nvie/vim-flake8'
 "Plugin 'jvirtanen/vim-octave'
 
 " NERDTree
@@ -66,7 +69,6 @@ Plugin 'klen/python-mode'
 Plugin 'uguu-org/vim-matrix-screensaver'
 
 " Java tab completion
-"Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = 'context'
 
 " solarized color scheme
@@ -121,7 +123,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 set ffs=unix,dos,mac
 "au BufWritePost .vimrc so ~/.vimrc
-set guifontwide=FangSong:h12
+"set guifontwide=FangSong:h12
 set gfn=Monaco:h13
 set mouse=a
 set autoread
@@ -149,7 +151,7 @@ set backspace=2
 set t_Co=256
 if has("gui_running")
     "Solarized
-    set background=light
+    set background=dark
     "let g:solarized_termtrans=1
     "let g:solarized_termcolors=256
     "let g:solarized_contrast="high"
