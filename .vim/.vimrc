@@ -36,9 +36,9 @@ Plugin 'xuhdev/SingleCompile'
 
 Plugin 'Rip-Rip/clang_complete'
 
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#show_call_signatures = "2"
-autocmd FileType python setlocal completeopt-=preview
+"Plugin 'davidhalter/jedi-vim'
+"let g:jedi#show_call_signatures = "2"
+"autocmd FileType python setlocal completeopt-=preview
 "
 "
 "Plugin 'Rip-Rip/clang_complete'
@@ -48,7 +48,19 @@ Plugin 'vim-scripts/google.vim'
 Plugin 'drmikehenry/vim-headerguard'
 "Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-scripts/Python-Syntax-Folding'
+
+
 Plugin 'kien/ctrlp.vim'
+" Ctrl-P config:
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_max_files = 0
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_user_command = 'find %s -type f'
+
+
 Plugin 'vim-scripts/a.vim'
 Plugin 'lepture/vim-jinja'
 Plugin 'pangloss/vim-javascript'
