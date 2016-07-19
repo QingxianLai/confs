@@ -35,7 +35,7 @@ Plugin 'ervandew/supertab'
 Plugin 'xuhdev/SingleCompile'
 
 
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 
 Plugin 'Rip-Rip/clang_complete'
@@ -60,7 +60,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 
 " Python-mode
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 
 " Matrix Screen
 Plugin 'uguu-org/vim-matrix-screensaver'
@@ -89,7 +89,7 @@ Plugin 'wesQ3/vim-windowswap'
 """
 " common
 """
-set encoding=utf8
+set encoding=utf8 nobomb
 "set langmenu=zh_CN.UTF-8
 set imcmdline
 set nocp	"no compatible
@@ -121,7 +121,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 set ffs=unix,dos,mac
 "au BufWritePost .vimrc so ~/.vimrc
-set guifontwide=FangSong:h12
+"set guifontwide=FangSong:h12
 set gfn=Monaco:h13
 set mouse=a
 set autoread
@@ -140,6 +140,21 @@ autocmd FileType html setlocal sw=2 ts=2
 autocmd FileType jinja setlocal sw=2 ts=2
 autocmd FileType yaml setlocal sw=2 ts=2
 set backspace=2
+
+
+"""""""""""""""""""
+" for work
+"""""""""""""""""""
+" Use UTF-8 without BOM set above
+" set encoding=utf-8 nobomb
+" Show “invisible” characters
+set lcs=tab:?\ ,trail:·,eol:¬,nbsp:_
+set list
+" Tabs set above
+" set expandtab
+set tabstop=4
+" Character limit
+set textwidth=80
 
 
 """
