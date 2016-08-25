@@ -22,6 +22,7 @@ Plugin 'tomasr/molokai'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
+inoremap <C-c> <CR><Esc>O
 
 "snipmate.vim
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -34,11 +35,11 @@ Plugin 'ervandew/supertab'
 "Plugin 'spolu/dwm.vim'
 Plugin 'xuhdev/SingleCompile'
 
-Plugin 'Rip-Rip/clang_complete'
+"Plugin 'Rip-Rip/clang_complete'
 
-"Plugin 'davidhalter/jedi-vim'
-"let g:jedi#show_call_signatures = "2"
-"autocmd FileType python setlocal completeopt-=preview
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#show_call_signatures = "2"
+autocmd FileType python setlocal completeopt-=preview
 "
 "
 "Plugin 'Rip-Rip/clang_complete'
@@ -66,7 +67,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'pangloss/vim-javascript'
 
 " For octave and Matlab highlighting
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 "Plugin 'jvirtanen/vim-octave'
 
 " NERDTree
@@ -90,6 +91,15 @@ Plugin 'fugalh/desert.vim'
 " NERDcommenter
 Plugin 'scrooloose/nerdcommenter'
 filetype plugin indent on     " required!
+
+
+" Hive syntax highlight
+Plugin 'autowitch/hive.vim'
+" for .hql files
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+" for .q files
+au BufNewFile,BufRead *.q set filetype=hive expandtab
+
 
 " HowTo
 " Navigate to the window you'd like to move
@@ -329,11 +339,16 @@ nmap <F10> :SCCompileRun<cr>
 map Q <Nop>
 map f <Nop>
 
+" select the current corrent word
+nmap <F5> viw
+" copy the selection to system clipboard
+vmap <F5> "+y
 
 
 " Stoping searching
 nmap <F2> :nohlsearch<CR>
-
+" show hive highlight
+nmap <F4> :set filetype=hive<CR>
 
 
 "" Clang complete options
@@ -350,6 +365,8 @@ nmap <F2> :nohlsearch<CR>
 
 " NERDTree shortcut map
 map <C-e> :NERDTreeToggle<CR>
+nmap ,n :NERDTreeFind<CR>
+
 
 
 " "For C++ and lua indentation
@@ -366,9 +383,9 @@ let g:pymode_rope_autoimport = 0
 
 " only keep one of the modes below:
 " 1] disable checker of pymode since it preduce the same with syntastic
-"let g:pymode_lint = 0
+let g:pymode_lint = 0
 " 2] disable checker for .py of syntastic since it preduces same result of pymode
-let g:syntastic_ignore_files = ['\.py$']
+"let g:syntastic_ignore_files = ['\.py$']
 
 
 
