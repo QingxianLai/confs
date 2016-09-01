@@ -186,20 +186,20 @@ set textwidth=80
 set t_Co=256
 if has("gui_running")
     "Solarized
-    set background=dark
     "let g:solarized_termtrans=1
-    "let g:solarized_termcolors=256
+    let g:solarized_termcolors=256
     "let g:solarized_contrast="high"
     "let g:solarized_visibility="high"
     colorscheme solarized
-    "let g:Powerline_symbols= 'fancy'
+    let g:Powerline_symbols= 'fancy'
 else
     " Molokai
     colorscheme molokai
-    set background=dark
     let g:molokai_original = 1
     let g:Powerline_symbols = 'fancy'
 endif
+
+set background=dark
 
 "" Molokai
 "colorscheme molokai
