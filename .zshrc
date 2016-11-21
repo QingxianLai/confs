@@ -91,11 +91,16 @@ export PATH=$PATH:~/code/Arcanist/arcanist/bin
 export PATH=$PATH:~/code/
 export PYTHONPATH=$PYTHONPATH:/home/qingxianlai/code/pinboard/
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export GRADLE_HOME=/Users/qingxianlai/Lib/gradle-1.12
+export PATH=$PATH:/Users/qingxianlai/Lib/gradle-1.12/bin
 
 # aliases
 alias ls='ls -F'
 alias rm='rm -i'
 #alias watch='python ~/code/pinboard/bin/watcher.py -s ~/code/pinboard qingxianlai@devapp:/home/qingxianlai/code/pinboard/ --exclude-git'
 alias pinboard='cd ~/code/pinboard/'
+alias optimus='cd ~/code/optimus/'
 alias vim='mvim -v'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+
+
