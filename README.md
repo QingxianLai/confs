@@ -21,3 +21,9 @@ vim +PluginInstall +qall
 or
 vi +PluginInstall +qall
 ```
+
+configure tmux
+```
+ln -sf ~/.dotfiles/tmux_conf ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+```

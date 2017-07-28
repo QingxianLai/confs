@@ -24,6 +24,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
 inoremap <C-c> <CR><Esc>O
 
+" airline
+Plugin 'bling/vim-airline'
+
 "snipmate.vim
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -107,6 +110,13 @@ au BufNewFile,BufRead *.q set filetype=hive expandtab
 " Navigate to the window you'd like to swap with
 " Press <leader>ww again
 Plugin 'wesQ3/vim-windowswap'
+
+" Go Style
+Plugin 'fatih/vim-go'
+
+" Bash support
+"Plugin 'bash-support.vim'
+
 
 """
 " common

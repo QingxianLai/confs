@@ -93,6 +93,7 @@ export PYTHONPATH=$PYTHONPATH:/home/qingxianlai/code/pinboard/
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GRADLE_HOME=/Users/qingxianlai/Lib/gradle-1.12
 export PATH=$PATH:/Users/qingxianlai/Lib/gradle-1.12/bin
+export PATH=$PATH:/Users/qingxianlai/Library/Python/2.7/bin
 
 # aliases
 alias ls='ls -F'
@@ -103,4 +104,27 @@ alias optimus='cd ~/code/optimus/'
 alias vim='mvim -v'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
+# required by bash-completion
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+# . $(brew --prefix)/etc/bash_completion
+# fi
+#
+source /Users/qingxianlai/code/Arcanist/arcanist/resources/shell/bash-completion
 
+
+# Golang setup
+export GOROOT=~/go
+export PATH=$GOROOT/bin:$HOME/code/magnus/bin:$PATH
+export GOPATH=~/code/magnus
+export TMPDIR=~/tmp
+mkdir -p $TMPDIR
+
+# for pupput env
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# export RBENV_VERSION=1.9.3-p547
+# eval "$(rbenv init -)"
+# ulimit -n 10000
+
+# scala settings from book atomic scala
+alias atomic='cd /Users/qingxianlai/project/atomicScala/atomic-scala-examples-master/examples'
+export CLASSPATH='/Users/qingxianlai/project/atomicScala/atomic-scala-examples-master/examples'
