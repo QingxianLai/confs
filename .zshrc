@@ -6,7 +6,10 @@ export ZSH=/Users/qingxianlai/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
+#ZSH_THEME="pure"
+#ZSH_THEME="bira"
 ZSH_THEME="crunch"
+#
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
@@ -52,7 +55,7 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z)
 
 # User configuration
 
@@ -95,6 +98,11 @@ export GRADLE_HOME=/Users/qingxianlai/Lib/gradle-1.12
 export PATH=$PATH:/Users/qingxianlai/Lib/gradle-1.12/bin
 export PATH=$PATH:/Users/qingxianlai/Library/Python/2.7/bin
 
+# Golang setup
+export GOROOT=~/go
+export PATH=$GOROOT/bin:$HOME/code/magnus/bin:$PATH
+export GOPATH=~/code/magnus
+
 # aliases
 alias ls='ls -F'
 alias rm='rm -i'
@@ -103,6 +111,7 @@ alias pinboard='cd ~/code/pinboard/'
 alias optimus='cd ~/code/optimus/'
 alias vim='mvim -v'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 # required by bash-completion
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -110,21 +119,3 @@ alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # fi
 #
 source /Users/qingxianlai/code/Arcanist/arcanist/resources/shell/bash-completion
-
-
-# Golang setup
-export GOROOT=~/go
-export PATH=$GOROOT/bin:$HOME/code/magnus/bin:$PATH
-export GOPATH=~/code/magnus
-export TMPDIR=~/tmp
-mkdir -p $TMPDIR
-
-# for pupput env
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# export RBENV_VERSION=1.9.3-p547
-# eval "$(rbenv init -)"
-# ulimit -n 10000
-
-# scala settings from book atomic scala
-alias atomic='cd /Users/qingxianlai/project/atomicScala/atomic-scala-examples-master/examples'
-export CLASSPATH='/Users/qingxianlai/project/atomicScala/atomic-scala-examples-master/examples'

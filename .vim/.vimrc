@@ -17,43 +17,14 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-
+" colorscheme
 Plugin 'tomasr/molokai'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'altercation/vim-colors-solarized'
+
+" tagbar
 Plugin 'majutsushi/tagbar'
-Plugin 'Raimondi/delimitMate'
-inoremap <C-c> <CR><Esc>O
 
-" airline
-Plugin 'bling/vim-airline'
-
-"snipmate.vim
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'garbas/vim-snipmate'
-Plugin 'editorconfig/editorconfig-vim'
-
-Plugin 'ervandew/supertab'
-"Plugin 'spolu/dwm.vim'
-Plugin 'xuhdev/SingleCompile'
-
-"Plugin 'Rip-Rip/clang_complete'
-
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#show_call_signatures = "2"
-autocmd FileType python setlocal completeopt-=preview
-"
-"
-"Plugin 'Rip-Rip/clang_complete'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/google.vim'
-Plugin 'drmikehenry/vim-headerguard'
-"Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-scripts/Python-Syntax-Folding'
-
-
+" Ctrl P
 Plugin 'kien/ctrlp.vim'
 " Ctrl-P config:
 let g:ctrlp_map = '<c-p>'
@@ -62,19 +33,41 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_max_files = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+
+"snipmate.vim
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+
+Plugin 'ervandew/supertab'
+Plugin 'xuhdev/SingleCompile'
+
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#show_call_signatures = "2"
+autocmd FileType python setlocal completeopt-=preview
 
 
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/google.vim'
+Plugin 'drmikehenry/vim-headerguard'
+Plugin 'vim-scripts/Python-Syntax-Folding'
+Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/a.vim'
 Plugin 'lepture/vim-jinja'
 Plugin 'pangloss/vim-javascript'
 
-" For octave and Matlab highlighting
-"Plugin 'nvie/vim-flake8'
-"Plugin 'jvirtanen/vim-octave'
-
-" NERDTree
-Plugin 'scrooloose/nerdtree'
 
 " Python-mode
 "Plugin 'klen/python-mode'
@@ -85,12 +78,6 @@ Plugin 'uguu-org/vim-matrix-screensaver'
 " Java tab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
-" solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
-
-" desert color scheme
-Plugin 'fugalh/desert.vim'
-
 " NERDcommenter
 Plugin 'scrooloose/nerdcommenter'
 filetype plugin indent on     " required!
@@ -98,9 +85,9 @@ filetype plugin indent on     " required!
 
 " Hive syntax highlight
 Plugin 'autowitch/hive.vim'
-" for .hql files
+" for .hql .ql .q files
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
-" for .q files
+au BufNewFile,BufRead *.ql set filetype=hive expandtab
 au BufNewFile,BufRead *.q set filetype=hive expandtab
 
 
@@ -118,9 +105,11 @@ Plugin 'fatih/vim-go'
 "Plugin 'bash-support.vim'
 
 
-"""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " common
-"""
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""`
 set encoding=utf8 nobomb
 "set langmenu=zh_CN.UTF-8
 set imcmdline
@@ -149,7 +138,6 @@ set autochdir
 set termencoding=utf-8
 set fileencodings=utf-8,gbk,ucs-bom,cp936
 set viminfo='10,\"100,:20,%,n~/.viminfo'
-set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 set ffs=unix,dos,mac
 "au BufWritePost .vimrc so ~/.vimrc
@@ -192,8 +180,8 @@ set textwidth=80
 """
 " colorscheme
 """
-
 set t_Co=256
+
 if has("gui_running")
     "Solarized
     "let g:solarized_termtrans=1
@@ -210,6 +198,16 @@ else
 endif
 
 set background=dark
+
+" Air Line setup 
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+endif
+"let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'luna'
 
 "" Molokai
 "colorscheme molokai
@@ -232,7 +230,7 @@ set background=dark
 " Open MacVim in fullscreen mode
 if has("gui_macvim")
     set fuoptions=maxvert,maxhorz
-    au GUIEnter * set fullscreen
+    "au GUIEnter * set fullscreen
 endif
 
 
@@ -283,7 +281,7 @@ set pastetoggle=<F3>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
- map <C-k> <C-W>k
+map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
@@ -349,7 +347,7 @@ nmap <F10> :SCCompileRun<cr>
 map Q <Nop>
 map f <Nop>
 
-" select the current corrent word
+" select the current word
 nmap <F5> viw
 " copy the selection to system clipboard
 vmap <F5> "+y
@@ -375,6 +373,8 @@ nmap <F4> :set filetype=hive<CR>
 
 " NERDTree shortcut map
 map <C-e> :NERDTreeToggle<CR>
+
+" Reveal current file in tree
 nmap ,n :NERDTreeFind<CR>
 
 
@@ -389,13 +389,14 @@ let g:pymode_rope=0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_autoimport = 0
+let g:go_bin_path='/Users/qingxianlai/GO_PROJECT/bin/'
 
 
 " only keep one of the modes below:
 " 1] disable checker of pymode since it preduce the same with syntastic
 let g:pymode_lint = 0
 " 2] disable checker for .py of syntastic since it preduces same result of pymode
-"let g:syntastic_ignore_files = ['\.py$']
+let g:syntastic_ignore_files = ['\.py$']
 
 
 
@@ -419,3 +420,20 @@ function! MyLastWindow()
     endif
   endif
 endfunction
+
+
+" set grepprg=grep\ -nH\ $*
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  " let g:ctrlp_use_caching = 0
+endif
+
+" bind  to grep word under cursor
+nnoremap <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
