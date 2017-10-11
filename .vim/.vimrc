@@ -100,9 +100,15 @@ Plugin 'wesQ3/vim-windowswap'
 
 " Go Style
 Plugin 'fatih/vim-go'
+let g:go_def_mode = "godef"
 
 " Bash support
 "Plugin 'bash-support.vim'
+
+" quick toggle
+Plugin 'milkypostman/vim-togglelist'
+nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -398,6 +404,8 @@ let g:pymode_lint = 0
 " 2] disable checker for .py of syntastic since it preduces same result of pymode
 let g:syntastic_ignore_files = ['\.py$']
 
+map <s-right> gt
+map <s-left> gT
 
 
 map j gj
@@ -422,7 +430,6 @@ function! MyLastWindow()
 endfunction
 
 
-" set grepprg=grep\ -nH\ $*
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
@@ -432,8 +439,19 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  " let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 0
 endif
 
 " bind  to grep word under cursor
 nnoremap <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" grep
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+map <c-f> :Ag<SPACE>
+
+" quickfix and loclist
+noremap - :cprev<CR>
+noremap = :cnext<CR>
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+let g:lt_height = 10
