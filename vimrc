@@ -35,6 +35,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_extensions = ['tag']
 
 " airline
 Plugin 'vim-airline/vim-airline'
@@ -101,6 +102,11 @@ Plugin 'wesQ3/vim-windowswap'
 " Go Style
 Plugin 'fatih/vim-go'
 let g:go_def_mode = "godef"
+
+
+" Thrift syntax highlighting
+Plugin 'solarnz/thrift.vim'
+au BufRead,BufNewFile *.thrift set filetype=thrift
 
 " Bash support
 "Plugin 'bash-support.vim'
@@ -180,7 +186,7 @@ set list
 " set expandtab
 set tabstop=4
 " Character limit
-set textwidth=80
+set textwidth=130
 
 
 """
@@ -365,15 +371,15 @@ nmap <F2> :nohlsearch<CR>
 nmap <F4> :set filetype=hive<CR>
 
 
-"" Clang complete options
-"let g:clang_complete_copen=1
-"let g:clang_periodic_quickfix=1
-"let g:clang_snippets=1
-"let g:clang_close_preview=1
-"let g:clang_use_library=1
-"let g:clang_user_options='|| exit 0'
-"let g:clang_user_options='-std=c++11'
-"let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+" Clang complete options
+let g:clang_complete_copen=1
+let g:clang_periodic_quickfix=1
+let g:clang_snippets=1
+let g:clang_close_preview=1
+let g:clang_use_library=1
+let g:clang_user_options='|| exit 0'
+let g:clang_user_options='-std=c++11'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
 
 
 
@@ -385,7 +391,7 @@ nmap ,n :NERDTreeFind<CR>
 
 
 
-" "For C++ and lua indentation
+ ""For C++ and lua indentation
 "autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 "autocmd FileType lua setlocal shiftwidth=3 tabstop=3
 
@@ -436,6 +442,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  unlet g:ctrlp_user_command
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
